@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "date": "2018/01",
+    "title": "This is post 1",
+    "content": "This is a really good post"
+  },
+  {
+    "id": 2,
+    "date": "2018/02",
+    "title": "This is post 2",
+    "content": "This is a really average post"
+  },
+  {
+    "id": 3,
+    "date": "2018/02",
+    "title": "This is post 3",
+    "content": "This is a really poor post"
+  }
+]
