@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+<section class="section" style="padding-top:2rem">
+    <div class="content" style="max-width: 800px">
+        <h1 class="title is-margin-less">Index</h1>
+        <p class="">WIP: At some point this will show all available routes and methods...</p>
+        <p class="notification is-size-7" style="padding: 1em">
+            <span class="icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </span>
+            <span>Remember to replace <strong>:placeholders</strong> in URL !</span>
+        </p>
+        <ul>
+            <% routes.forEach(function(route) { %>
+                <li>
+                    <a href="/<%= route.path %>"><%= route.path %></a>
+                    <p class="is-size-7"><%= route.file %></p>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</section>
+</body>
+</html>

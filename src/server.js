@@ -1,35 +1,26 @@
+const argv = require('yargs').argv
 const path = require('path')
+const getPort = require('get-port')
 const express = require('express')
-const reload = require('reload')
-const watch = require('watch')
 
+const Api = require('./classes/Api')
+
+// app
 const app = express()
+app.set('views', __dirname + '/views')
+app.set('view engine', 'ejs')
 
-const { processRequest } = require('./services/request')
-const { FileError } = require('./services/classes')
-
-app.get('/', function (req, res) {
-  return res.send('Showing index')
-})
-
-app.all('*', function (req, res) {
-  try {
-    const file = processRequest(root, req)
-    if (file) {
-      return file.send(req, res)
-    }
+// api
+;(async () => {
+  const options = {
+    root: argv.root || path.join(__dirname, '/../api'),
+    port: argv.port || await getPort({ port: [3000, 3001, 3002] }),
+    debug: argv.debug || false,
   }
-  catch (error) {
-    if (error instanceof FileError) {
-      return res.status(500).send({ error })
-    }
-    throw error
-  }
-  res.status(404)
-  return res.send({ status: 404 })
-})
 
+  // configure api
+  const api = new Api(options)
 
-const root = path.join(__dirname, '/../api')
-
-app.listen(process.env.PORT || 8080)
+  // start
+  api.start(app)
+})()
