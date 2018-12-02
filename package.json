@@ -1,7 +1,7 @@
 {
-  "name": "mock-api",
-  "version": "1.0.0",
-  "description": "A file-based node app to mock API calls",
+  "name": "flat-file-api",
+  "version": "0.1",
+  "description": "A command line tool to mock APIs using flat files",
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-    "http": "0.0.0",
-    "reload": "^2.3.1",
-    "watch": "^1.0.2"
+    "express": "^4.16.4"
   }
 }

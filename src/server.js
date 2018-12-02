@@ -5,26 +5,25 @@ const watch = require('watch')
 
 const app = express()
 
-const { processFile, getFile } = require('./services/file')
-const { FileError } = require('./services/errors')
+const { processRequest } = require('./services/request')
+const { FileError } = require('./services/classes')
 
 app.get('/', function (req, res) {
   return res.send('Showing index')
 })
 
 app.all('*', function (req, res) {
-  let file
   try {
-    file = getFile(root, req)
+    const file = processRequest(root, req)
+    if (file) {
+      return file.send(req, res)
+    }
   }
   catch (error) {
     if (error instanceof FileError) {
       return res.status(500).send({ error })
     }
     throw error
-  }
-  if (file) {
-    return processFile(file, req, res)
   }
   res.status(404)
   return res.send({ status: 404 })
