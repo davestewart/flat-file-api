@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "date": "2018/01",
+    "date": "2017/01",
     "title": "This is post 1",
     "content": "This is a really good post"
   },
   {
     "id": 2,
-    "date": "2018/02",
+    "date": "2017/02",
     "title": "This is post 2",
     "content": "This is a really average post"
   },

@@ -1,7 +1,7 @@
 module.exports = req => {
   return {
     foo: 34567,
-    path: req.path,
+    absPath: req.absPath,
     originalUrl: req.originalUrl,
     params: req.params
   }
