@@ -56,18 +56,26 @@ A browser plugin will intercept requests and will be able to respond with the lo
 
 ### Static and dynamic files
 
-Static JSON files will their contents, but JavaScript files can be executed!
+Static JSON files will simply return their contents, but JavaScript files can be *executed*.
 
 This allows you to do anything, but examples might be:
 
-- loading and filtering *related* JSON file using the URL parameters
+- loading and filtering JSON using the passed URL parameters
 - generating output on the fly, perhaps using `Array.map()` or the like
 
-The difference between this an a full API is:
+Check the source code for examples:
 
-- you can run this locally
-- anyone can edit the files
-- you can commit the API to the repo
+- [api/posts/index.json](https://github.com/davestewart/flat-file-api/blob/master/api/posts/index.json)
+- [api/posts/_id.js](https://github.com/davestewart/flat-file-api/blob/master/api/posts/_id.js)
+- [api/posts/date/_year/index.js](https://github.com/davestewart/flat-file-api/blob/master/api/posts/date/_year/index.js)
+
+
+The difference between this and something like Postman is:
+
+- JavaScript allows for complete customisation
+- anyone with the repo can run this
+- changes can be committed to the repo
+- no additional software needed
 
 Note that there are various rules around file prioritisation, which will get documented.
 
