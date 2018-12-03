@@ -1,8 +1,3 @@
-module.exports = req => {
-  return {
-    foo: 34567,
-    absPath: req.absPath,
-    originalUrl: req.originalUrl,
-    params: req.params
-  }
+module.exports = function (req, res) {
+  return require('./index').find(post => post.id === Number(req.params.id)) || res.sendStatus(404)
 }

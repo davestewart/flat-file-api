@@ -34,10 +34,9 @@ function onIndex (router) {
 
 function onEndpoint (router) {
   return function (req, res) {
+    // attempt to resolve and render endpoint
     try {
-      // resolve the route and attempt to find a file
       const endpoint = router.resolve(req.params[0])
-      console.log(endpoint)
       if (endpoint) {
         return router.render(endpoint, req, res)
       }

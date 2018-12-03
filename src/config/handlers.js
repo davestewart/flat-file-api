@@ -3,7 +3,7 @@ module.exports = {
   'js': function (req, res, file) {
     const js = require(file)
     return js instanceof Function
-      ? res.send(js(req, res))
+      ? res.send(js(req, res, file))
       : res.sendFile(file)
   },
 

@@ -19,9 +19,12 @@ module.exports = class Router {
       const ext = absPath.replace(/^[^.]+./, '').toString()
       const handler = this.handlers[ext]
 
+      // setup request
+      req.params = params
+      req.file = absPath
+
       // setup response
       res.set('X-Api-File-Path', relPath)
-      req.params = params
 
       // handle file
       if (handler) {

@@ -2,19 +2,22 @@
   {
     "id": 1,
     "date": "2017/01",
-    "title": "This is post 1",
-    "content": "This is a really good post"
+    "title": "Tech Post",
+    "content": "This is a post about tech",
+    "category": "tech"
   },
   {
     "id": 2,
     "date": "2017/02",
-    "title": "This is post 2",
-    "content": "This is a really average post"
+    "title": "Blog Post",
+    "content": "This is a blog post",
+    "category": "blog"
   },
   {
     "id": 3,
     "date": "2018/02",
-    "title": "This is post 3",
-    "content": "This is a really poor post"
+    "title": "Random Post",
+    "content": "This is a random post",
+    "category": "random"
   }
 ]
