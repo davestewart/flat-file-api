@@ -27,7 +27,7 @@ As an example, the following file and folder structure...
 
 ```
 
-...generates the following routes:
+...generates the following routes...
 
 ```
 /comments
@@ -39,17 +39,20 @@ As an example, the following file and folder structure...
 /posts/date/:year/:month
 ```
 
+...which return data from within the files.
+
+This makes setting up an API for frontend development extremely fast and easy!
 
 ## WIP
 
-This package is a work in progress, with various [planned features](issues).
+This package is a work in progress, with various [planned features](https://github.com/davestewart/flat-file-api/issues).
 
-It will eventually run as a global script, allowing you to set up an API in any project, and run it on demand.
+It will eventually run as a global script, allowing you to set up a flat-file API in any project, and run it on demand.
 
 A browser plugin will intercept requests and will be able to respond with the local API version of files.
 
 
-## Features
+## Features / planned features
 
 ### Static and dynamic files
 
@@ -64,14 +67,23 @@ The difference between this an a full API is:
 
 - you can run this locally
 - anyone can edit the files
-- the API is in source control
+- you can commit the API to the repo
 
+Note that there are various rules around file prioritisation, which will get documented.
 
 ### Custom file handlers
 
-You can set up custom file handlers, based on the extension of the file, which you can use to transform the content of the file before returning.
+You can set up custom file handlers, based on the extension of the file, which you can use to transform the content of the file before returning:
 
-For example, [simulated CRUD](issues/7) interaction is planned with a `.crud.json` extension.
+```js
+{
+  'posts.res.yaml': function (req, res) {
+    // load yaml resource, then return
+  }
+}
+```
+
+For example, [simulated CRUD](https://github.com/davestewart/flat-file-api/issues/7) interaction is planned with a `.crud.json` extension.
  
 This will allow you to simply copy and paste a JSON array to a single file, then have the framework simulate the correct response by manipulating the file and returning a portion of it or such like.
 
@@ -89,7 +101,7 @@ comments.put.json
 
 Each API shows an index of all its routes from the root URL.
 
-AT some point this will show available methods as well.
+At some point this will show available HTTP methods as well. Additionally, a way to hint parameters per endpoint is planned, so APIs can be run interactively.
 
 ## Demo
 
@@ -104,15 +116,26 @@ npm install
 Run with the following command:
 
 ```
-npm run start
+npm run demo
+```
+
+To run your own API, run:
+
+```
+npm run start -- --root <relative or absolute path to your api>
 ```
 
 Then, visit:
 
 - http://localhost:3000
 
-Currently the demo loads an example, in-flux API from the package itself.
+The index file should load with the demo API. The links are clickable, but you will need to edit the URL parameters yourself!
 
-The index file should load, with clickable links. You will need to edit the URL parameters yourself!
+As such, here are some examples:
+
+- http://localhost:3000/posts
+- http://localhost:3000/posts/date/2017
+- http://localhost:3000/posts/date/2017/01
+- http://localhost:3000/products/300
 
 Have fun...

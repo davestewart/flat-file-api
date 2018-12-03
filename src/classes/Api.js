@@ -60,7 +60,7 @@ Starting Flat File Api...
 `)
     // check root exists
     if (!fs.existsSync(options.root)) {
-      throw Error(`The supplied root ${options.root} does not exist`)
+      throw Error(`The supplied root "${options.root}" does not exist`)
     }
 
     // start
