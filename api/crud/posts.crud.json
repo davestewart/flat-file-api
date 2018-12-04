@@ -1,24 +1,17 @@
-{
-  "get": [
-    {
-      "id": 1,
-      "title": "This is post 1",
-      "content": "This is a really good post"
-    },
-    {
-      "id": 2,
-      "title": "This is post 2",
-      "content": "This is a really average post"
-    },
-    {
-      "id": 3,
-      "title": "This is post 3",
-      "content": "This is a really poor post"
-    }
-  ],
-  "post": {
-    "id": "{id}",
-    "title": "This is post {id}",
+[
+  {
+    "id": 1,
+    "title": "This is post 1",
     "content": "This is a really good post"
+  },
+  {
+    "id": 2,
+    "title": "This is post 2",
+    "content": "This is a really average post"
+  },
+  {
+    "id": 3,
+    "title": "This is post 3",
+    "content": "This is a really poor post"
   }
-}
+]

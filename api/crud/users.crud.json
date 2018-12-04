@@ -1,0 +1,7 @@
+{
+  "id": 0,
+  "name": "<%= faker.name.findName() %>",
+  "email": "<%= faker.internet.email() %>",
+  "image": "<%= faker.internet.avatar(12) %>",
+  "bio": "<%= faker.lorem.sentences(8, 20) %>"
+}
