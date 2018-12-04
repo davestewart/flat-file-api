@@ -2,6 +2,7 @@ const argv = require('yargs').argv
 const path = require('path')
 const getPort = require('get-port')
 const express = require('express')
+var bodyParser = require('body-parser')
 const chalk = require('chalk')
 
 const Api = require('./classes/Api')
@@ -10,6 +11,12 @@ const Api = require('./classes/Api')
 const app = express()
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 // api
 async function start () {
